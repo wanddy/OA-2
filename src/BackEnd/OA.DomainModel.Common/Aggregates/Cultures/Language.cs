@@ -1,4 +1,4 @@
-﻿namespace OA.DomainModel.Aggregates.Languages
+namespace OA.DomainModel.Aggregates.Cultures
 {
     using System.Globalization;
 
