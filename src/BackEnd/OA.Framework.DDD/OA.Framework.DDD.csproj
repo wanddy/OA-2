@@ -43,7 +43,8 @@
   <ItemGroup>
     <Compile Include="DomainModel\AggregateRootBase.cs" />
     <Compile Include="DomainModel\IAggregateRoot.cs" />
-    <Compile Include="DomainModel\IAggregateRootRepository.cs" />
+    <Compile Include="DomainRepositories\IAggregateDomainRepository.cs" />
+    <Compile Include="DomainRepositories\IAggregateRootDomainRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

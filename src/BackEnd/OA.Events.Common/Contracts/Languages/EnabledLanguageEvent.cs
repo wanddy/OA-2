@@ -1,13 +1,13 @@
-﻿namespace OA.Events.Contracts.Languages
+namespace OA.Events.Contracts.Languages
 {
     using System.Globalization;
 
     using OA.Framework.Common.Events;
 
     [Event]
-    public class HidLanguageEvent
+    public class EnabledLanguageEvent
     {
-        public HidLanguageEvent(CultureInfo culture)
+        public EnabledLanguageEvent(CultureInfo culture)
         {
             this.Culture = culture;
         }

@@ -7,6 +7,10 @@ namespace OA.Framework.DomainModel
             this.Id = id;
         }
 
+        protected AggregateRootBase()
+        {
+        }
+
         public virtual TId Id { get; private set; }
 
         public static bool operator ==(AggregateRootBase<TId> left, AggregateRootBase<TId> right)

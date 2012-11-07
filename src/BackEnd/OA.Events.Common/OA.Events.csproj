@@ -41,8 +41,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\Languages\HidLanguageEvent.cs" />
-    <Compile Include="Contracts\Languages\PublishedLanguageEvent.cs" />
+    <Compile Include="Contracts\Languages\DisabledLanguageEvent.cs" />
+    <Compile Include="Contracts\Languages\EnabledLanguageEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

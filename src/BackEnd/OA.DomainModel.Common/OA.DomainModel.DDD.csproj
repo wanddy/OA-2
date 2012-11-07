@@ -41,9 +41,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Aggregates\Cultures\HiddenLanguage.cs" />
+    <Compile Include="Aggregates\Cultures\DisabledLanguage.cs" />
     <Compile Include="Aggregates\Cultures\Language.cs" />
-    <Compile Include="Aggregates\Cultures\PublishedLanguage.cs" />
+    <Compile Include="Aggregates\Cultures\EnabledLanguage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -11,6 +11,10 @@ namespace OA.DomainModel.Aggregates.Cultures
         {
         }
 
-        public bool IsPublished { get; protected set; }
+        protected Language()
+        {
+        }
+
+        public virtual bool IsPublished { get; protected set; }
     }
 }
