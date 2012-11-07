@@ -62,6 +62,12 @@
     <Compile Include="Commands\ICommandValidatorFactory.cs" />
     <Compile Include="Commands\InvalidCommandException.cs" />
     <Compile Include="Commands\ValidatorCommandHandlerDecorator.cs" />
+    <Compile Include="Events\EventAttribute.cs" />
+    <Compile Include="Events\EventHandlerDecoratorBase.cs" />
+    <Compile Include="Events\EventDispatcher.cs" />
+    <Compile Include="Events\IEventFactory.cs" />
+    <Compile Include="Events\IEventHandler.cs" />
+    <Compile Include="Events\InvalidEventException.cs" />
     <Compile Include="ExceptionHandling\BrokenRule.cs" />
     <Compile Include="ExceptionHandling\ValidationResultMethodExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

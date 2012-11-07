@@ -1,4 +1,4 @@
-namespace OA.Framework.DomainModel.Events
+namespace OA.Framework.Common.Events
 {
     using System;
     using System.Runtime.Serialization;

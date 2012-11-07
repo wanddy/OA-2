@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{017887D6-055D-4807-A404-F1D95C48F748}</ProjectGuid>
+    <ProjectGuid>{234DB057-8FEE-4439-B595-630F33133C4A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OA.DomainModel</RootNamespace>
-    <AssemblyName>OA.DomainModel.DDD</AssemblyName>
+    <RootNamespace>OA.Events</RootNamespace>
+    <AssemblyName>OA.Events</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -34,23 +34,21 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>OA.DomainModel.DDD.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>OA.Events.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Aggregates\Cultures\HiddenLanguage.cs" />
-    <Compile Include="Aggregates\Cultures\Language.cs" />
-    <Compile Include="Aggregates\Cultures\PublishedLanguage.cs" />
+    <Compile Include="Contracts\Languages\HidLanguageEvent.cs" />
+    <Compile Include="Contracts\Languages\PublishedLanguageEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OA.Events.Common\OA.Events.csproj">
-      <Project>{234DB057-8FEE-4439-B595-630F33133C4A}</Project>
-      <Name>OA.Events</Name>
-    </ProjectReference>
+    <None Include="OA.Events.snk" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\OA.Framework.Common\OA.Framework.csproj">
       <Project>{D2B50640-DA61-4D63-8AD6-A85F8732BA45}</Project>
       <Name>OA.Framework</Name>
@@ -60,10 +58,6 @@
       <Name>OA.Framework.DDD</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="OA.DomainModel.DDD.snk" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

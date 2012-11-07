@@ -42,12 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DomainModel\AggregateRootBase.cs" />
-    <Compile Include="DomainModel\Events\DomainEventAttribute.cs" />
-    <Compile Include="DomainModel\Events\DomainEventHandlerDecoratorBase.cs" />
-    <Compile Include="DomainModel\Events\DomainEvents.cs" />
-    <Compile Include="DomainModel\Events\IDomainEventFactory.cs" />
-    <Compile Include="DomainModel\Events\IDomainEventHandler.cs" />
-    <Compile Include="DomainModel\Events\InvalidEventException.cs" />
     <Compile Include="DomainModel\IAggregateRoot.cs" />
     <Compile Include="DomainModel\IAggregateRootRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,10 +1,10 @@
-﻿namespace OA.DomainModel.Events.Languages
+﻿namespace OA.Events.Contracts.Languages
 {
     using System.Globalization;
 
-    using OA.Framework.DomainModel.Events;
+    using OA.Framework.Common.Events;
 
-    [DomainEvent]
+    [Event]
     public class HidLanguageEvent
     {
         public HidLanguageEvent(CultureInfo culture)

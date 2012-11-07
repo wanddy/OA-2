@@ -2,8 +2,8 @@ namespace OA.DomainModel.Aggregates.Cultures
 {
     using System.Globalization;
 
-    using OA.DomainModel.Events.Languages;
-    using OA.Framework.DomainModel.Events;
+    using OA.Events.Contracts.Languages;
+    using OA.Framework.Common.Events;
 
     public class HiddenLanguage : Language
     {
@@ -21,7 +21,7 @@ namespace OA.DomainModel.Aggregates.Cultures
         {
             this.IsPublished = true;
             var publishedLanguage = PublishedLanguage.CreateNew(this.Id);
-            DomainEvents.Raise(new PublishedLanguageEvent(this.Id));
+            EventDispatcher.Raise(new PublishedLanguageEvent(this.Id));
             return publishedLanguage;
         }
     }
