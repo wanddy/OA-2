@@ -2,11 +2,8 @@
 <!-- This is the System.Data.dll provider for SQL Server -->
 <hibernate-configuration  xmlns="urn:nhibernate-configuration-2.2" >
   <session-factory name="NHibernate.Test">
-    <property name="connection.driver_class">NHibernate.Driver.SqlClientDriver</property>
-    <property name="connection.connection_string">
-      Data Source=NDEVAS\SQL_NDEVAS;Initial Catalog=CQRS_Testing;Persist Security Info=True;User ID=oaAdmin;Password=collserola;
-    </property>
-    <property name="dialect">NHibernate.Dialect.MsSql2005Dialect</property>
+    <property name="connection.driver_class">NHibernate.Driver.SqlServerCeDriver</property>
+    <property name="dialect">NHibernate.Dialect.MsSqlCe40Dialect</property>
     <property name="current_session_context_class">NHibernate.Context.ThreadStaticSessionContext</property>
     <property name="show_sql">true</property>
     <property name="query.substitutions">true 1, false 0, yes 'Y', no 'N'</property>

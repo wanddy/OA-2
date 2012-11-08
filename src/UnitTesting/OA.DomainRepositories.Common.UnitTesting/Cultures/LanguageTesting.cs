@@ -1,6 +1,8 @@
 ﻿namespace OA.DomainRepositories.UnitTesting.Cultures
 {
+    using System.Collections.Generic;
     using System.Globalization;
+    using System.IO;
 
     using NHibernate;
     using NHibernate.Cfg;
@@ -19,7 +21,17 @@
 
         public LanguageTesting()
         {
-            this.sessionFactory = new Configuration().Configure().BuildSessionFactory();
+            var directoryRoot = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.Parent.FullName;
+            this.sessionFactory =
+                new Configuration().AddProperties(
+                    new Dictionary<string, string>
+                        {
+                            {
+                                Environment.ConnectionString,
+                                string.Format(@"Data Source={0}\db\OA.sdf;Password=p3l4m3l4!;", directoryRoot)
+                            }
+                        }).
+                    Configure().BuildSessionFactory();
             this.languageConverter = new LanguageConverter();
         }
 
