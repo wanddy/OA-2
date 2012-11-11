@@ -14,6 +14,11 @@
 
         public static void Execute<TCommand>(TCommand command) where TCommand : class
         {
+            if (!command.GetType().IsDefined(typeof(CommandAttribute), true))
+            {
+                throw new InvalidCommandException("CommandAttribute required");
+            }
+
             commandHandlerFactory.GetHandlerFor<TCommand>().Execute(command);
         }
     }

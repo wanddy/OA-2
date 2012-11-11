@@ -23,7 +23,6 @@ namespace OA.DomainModel.Aggregates.Cultures
 
         public virtual EnabledLanguage Enable()
         {
-            this.IsPublished = true;
             var publishedLanguage = EnabledLanguage.CreateNew(this.Id);
             EventDispatcher.Raise(new EnabledLanguageEvent(this.Id));
             return publishedLanguage;

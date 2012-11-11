@@ -41,6 +41,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aggregates\Cultures\Currency.cs" />
     <Compile Include="Aggregates\Cultures\DisabledLanguage.cs" />
     <Compile Include="Aggregates\Cultures\Language.cs" />
     <Compile Include="Aggregates\Cultures\EnabledLanguage.cs" />

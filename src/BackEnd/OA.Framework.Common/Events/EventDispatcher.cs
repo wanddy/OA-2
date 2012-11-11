@@ -13,16 +13,12 @@ namespace OA.Framework.Common.Events
 
         public static void Raise<TEvent>(TEvent @event) where TEvent : class
         {
-            ThrowExceptionIfInvalid(@event);
-            Parallel.ForEach(eventFactory.FindAllInstances<TEvent>(), handler => handler.Raise(@event));
-        }
-
-        private static void ThrowExceptionIfInvalid<TEvent>(TEvent @event) where TEvent : class 
-        {
-            if (!@event.GetType().IsDefined(typeof(EventAttribute), false))
+            if (!@event.GetType().IsDefined(typeof(EventAttribute), true))
             {
-                throw new InvalidEventException("DomainEventAttribute not defined");
+                throw new InvalidEventException("EventAttribute required");
             }
+
+            Parallel.ForEach(eventFactory.FindAllInstances<TEvent>(), handler => handler.Raise(@event));
         }
     }
 }

@@ -10,7 +10,6 @@ namespace OA.DomainModel.Aggregates.Cultures
         private EnabledLanguage(CultureInfo id)
             : base(id)
         {
-            this.IsPublished = true;
         }
 
         protected EnabledLanguage()
@@ -24,7 +23,6 @@ namespace OA.DomainModel.Aggregates.Cultures
 
         public virtual DisabledLanguage Disable()
         {
-            this.IsPublished = false;
             var hiddenLanguage = DisabledLanguage.CreateNew(this.Id);
             EventDispatcher.Raise(new DisabledLanguageEvent(this.Id));
             return hiddenLanguage;
