@@ -53,15 +53,9 @@
     <Compile Include="Commands\CommandAttribute.cs" />
     <Compile Include="Commands\CommandDispatcher.cs" />
     <Compile Include="Commands\CommandHandlerDecoratorBase.cs" />
-    <Compile Include="Commands\CommandValidator.cs" />
-    <Compile Include="Commands\DataAnnotationsCommandValidator.cs" />
-    <Compile Include="Commands\GenericCommandValidator.cs" />
     <Compile Include="Commands\ICommandHandler.cs" />
     <Compile Include="Commands\ICommandHandlerFactory.cs" />
-    <Compile Include="Commands\ICommandValidator.cs" />
-    <Compile Include="Commands\ICommandValidatorFactory.cs" />
     <Compile Include="Commands\InvalidCommandException.cs" />
-    <Compile Include="Commands\ValidatorCommandHandlerDecorator.cs" />
     <Compile Include="Events\EventAttribute.cs" />
     <Compile Include="Events\EventHandlerDecoratorBase.cs" />
     <Compile Include="Events\EventDispatcher.cs" />

@@ -48,7 +48,6 @@
   <ItemGroup>
     <Compile Include="BootStrapper.cs" />
     <Compile Include="Implementations\Framework\BootStrappedCommandHandlerFactory.cs" />
-    <Compile Include="Implementations\Framework\BootStrappedCommandValidatorFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
