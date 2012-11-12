@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="874dae84-9937-4f54-8b88-876166a37162" name="DomainModel" linkedPackageId="2ec44a58-4782-4c41-b8dd-5720aa60ebdc" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="0b3b069f-3f3d-4350-adbe-b9db904e7cc6">
+      <profileInstance Id="6b14c6d6-1f7e-41b2-8c6e-03e87753104e" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="c90fe183-f723-4a3b-a69d-e28ab4cdc905">
+      <profileInstance Id="95345552-c88f-43d4-afcd-e16abddd0112" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f179b1f8-74ed-41f9-87f2-f49b527b0b3c" name="Booking" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="21024058-7e77-47f2-8da2-c17842192dfe" />
+        <targetEnds>
+          <association Id="36be327f-3bbb-47be-9ab3-c3a1e81d8822" isDerived="false" sourceEndRoleName="" targetEndRoleName="bookingStrategy" isLeaf="false" isAbstract="false">
+            <interfaceMoniker Id="21c9bdfc-333b-4368-ba22-d02558f90b4a" LastKnownName="IBookingStrategy" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9f21c313-07de-460b-ae6b-f8ad1ee307e4" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a8806977-985c-432b-aaa1-6e7f21bdd492" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d9483422-23e7-4cbc-aecd-0a4b5312a1ec" name="bookingStrategy" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="c8e61005-71ae-4eaa-9793-9b735e695cd6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d56acc4f-e825-4b87-ab3e-de12cc201bdf" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9efa15c6-cb75-4e8b-8c4e-47628c91a8ac" name="PreBooking" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="52a687b7-5d82-44c8-965c-f08888c0be23" />
+        <generalsInternal>
+          <generalization Id="6561c686-9779-423c-acc7-c1dced7cf6c9" isSubstitutable="false">
+            <classMoniker Id="f179b1f8-74ed-41f9-87f2-f49b527b0b3c" LastKnownName="Booking" />
+            <elementDefinition Id="059a048e-c3bf-4e23-9c3f-149bd0674561" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="53964005-ec54-44d8-bfb4-d011c58dab66" name="SetAsPending" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c869ac6a-dac7-4908-b60d-81901c7115c3" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a27a755f-ad94-4d14-95c6-6d133293e183" direction="Return">
+                  <elementDefinition Id="b9a466d7-cb45-4631-b900-a84c1126cb9e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="1e1d9b2f-d584-470c-8f3f-a1c7ebfa1e91" LastKnownName="PendingBooking" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="02d22644-4206-4396-b3d6-17d058d97395" name="PendingBooking" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="93f23f05-7a20-4bad-b4a5-fa16ee6f5b03" />
+        <generalsInternal>
+          <generalization Id="22397e56-d0ff-46c3-ae24-bd8dc8e3285d" isSubstitutable="false">
+            <classMoniker Id="f179b1f8-74ed-41f9-87f2-f49b527b0b3c" LastKnownName="Booking" />
+            <elementDefinition Id="d9dc4f17-ebd4-4fab-91ba-7d6fe439ca5e" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="d8e6c53f-385d-48b4-a681-16b43a1fdc55" name="Accept" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="38a73f49-8e59-4317-8308-0b2da6950370" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e028421b-05d2-4f96-aac9-5ad25a80065e" direction="Return">
+                  <elementDefinition Id="b2eff024-6ae1-4ccb-b0ef-e42a11fd236e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b0626fcf-aa68-4bae-af6f-fcbd27bfe8c8" LastKnownName="AcceptedBooking" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d649f7e9-5dd4-473c-8e23-4b716a03b130" name="AcceptedBooking" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="deb67891-59ba-4fba-b6da-d97299e6ac06" />
+        <generalsInternal>
+          <generalization Id="896606b1-027c-429b-81b7-05fd7b000e7a" isSubstitutable="false">
+            <classMoniker Id="f179b1f8-74ed-41f9-87f2-f49b527b0b3c" LastKnownName="Booking" />
+            <elementDefinition Id="b40f1d3d-13c8-442b-9f44-72b54e4fdecd" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="11804112-1ce3-49f3-8d14-4b66e9d11484" name="Confirm" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f21a5e39-8011-41c3-afc4-cb60e0a73004" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8a8a77b3-572f-4f31-b772-83d2dbae59b7" direction="Return">
+                  <elementDefinition Id="f5e7f57e-ac8f-405a-922e-def74110482f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="27607df7-0637-404c-a6a3-57792b79fe34" LastKnownName="ConfirmedBooking" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c6abf06c-239e-4354-8d50-1b0217946193" name="CancelledBooking" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8b34a5f9-8c31-41cf-90f2-d17b5684b266" />
+        <generalsInternal>
+          <generalization Id="76486f00-8676-4475-869c-38a167d1133d" isSubstitutable="false">
+            <classMoniker Id="f179b1f8-74ed-41f9-87f2-f49b527b0b3c" LastKnownName="Booking" />
+            <elementDefinition Id="559f74ac-13dd-4487-a184-bcf013ed62b9" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="468035cb-05a7-421e-9354-10c478dd6c3f" name="DeniedBooking" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0eb8ca37-79fb-41b2-8eab-07fbd062a8fd" />
+        <generalsInternal>
+          <generalization Id="a43815b5-87a0-498c-a691-5c81a0d6ea9d" isSubstitutable="false">
+            <classMoniker Id="f179b1f8-74ed-41f9-87f2-f49b527b0b3c" LastKnownName="Booking" />
+            <elementDefinition Id="c805b381-baa4-4684-81e2-978ee78b9556" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="19a04643-003b-4d45-9ade-e3bc9c4cc692" name="ConfirmedBooking" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f8903f4d-252f-4ca8-afbb-3092d2febc01" />
+        <generalsInternal>
+          <generalization Id="b7e88f12-4303-4461-a502-0f99f6dbbb80" isSubstitutable="false">
+            <classMoniker Id="f179b1f8-74ed-41f9-87f2-f49b527b0b3c" LastKnownName="Booking" />
+            <elementDefinition Id="47e1f83f-7e63-42db-a25e-cb4f5005a5b9" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="1e1d9b2f-d584-470c-8f3f-a1c7ebfa1e91" name="PendingBooking" isAbstract="false" isLeaf="false" cachedFullName="OA::PendingBooking">
+        <elementDefinition Id="93f23f05-7a20-4bad-b4a5-fa16ee6f5b03" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="b0626fcf-aa68-4bae-af6f-fcbd27bfe8c8" name="AcceptedBooking" isAbstract="false" isLeaf="false" cachedFullName="OA::AcceptedBooking">
+        <elementDefinition Id="deb67891-59ba-4fba-b6da-d97299e6ac06" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="27607df7-0637-404c-a6a3-57792b79fe34" name="ConfirmedBooking" isAbstract="false" isLeaf="false" cachedFullName="OA::ConfirmedBooking">
+        <elementDefinition Id="f8903f4d-252f-4ca8-afbb-3092d2febc01" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="21c9bdfc-333b-4368-ba22-d02558f90b4a" name="IBookingStrategy" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3fa3ee3d-c4f6-4d31-805f-02801a75b8a8" />
+        <ownedOperations>
+          <operation Id="e65cbd7e-0556-4a2c-913b-2ba58c2dd5b7" name="Confirm" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2588f407-e2ea-432a-97f1-20069ae90fe6" />
+          </operation>
+          <operation Id="f0397dbe-dc12-4e84-b239-a0f4b65af188" name="Accept" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1d2a6922-1a45-4b73-8650-8a28856bca1b" />
+          </operation>
+          <operation Id="259d73f1-285c-479d-be8f-3027114bfe1a" name="Cancel" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="73949f05-5f22-4ca8-ac18-c382b23ba5b9" />
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="35b07c00-2832-45e2-8cd8-a7cef087b5ac" name="BasicBookingStrategy" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a09f23a4-c8d1-4b59-adf2-8062201e8e18" />
+        <suppliersInternal>
+          <interfaceRealization Id="a705fae0-8859-4860-9f85-7751e62fe2de">
+            <interfaceMoniker Id="21c9bdfc-333b-4368-ba22-d02558f90b4a" LastKnownName="IBookingStrategy" />
+            <elementDefinition Id="c54dda32-36b5-41d3-80b7-b33e072e15ad" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="6210f64f-8cce-47cf-90da-715ad86e909b" name="isOnRequest" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="14e12e38-60de-4ece-b11d-cd86a24706ca" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="9f365e0b-8cda-41ef-822a-9f5aa3283514" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="4afd6f42-f0d8-48a5-848c-440d62f48458" name="Confirm" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2f016e5f-7e3c-4ebd-95aa-344582d99321" />
+          </operation>
+          <operation Id="3cb4902e-79bb-4ad2-b841-bcaaea1f98b4" name="Accept" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0ebdaa0f-8846-400a-82b1-fa2feb84c90a" />
+          </operation>
+          <operation Id="79a2b74b-1f5c-45e5-ba46-62d3741568f1" name="Cancel" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="edd3f583-2e8a-445a-a976-96ff7d432cab" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="9f365e0b-8cda-41ef-822a-9f5aa3283514" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
+        <elementDefinition Id="02308036-57ff-4df6-8b7e-5ddbb0c400d2" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="22dd9aaf-ed49-4a34-bff0-0be117b80dc2" name="LastMinuteBooking" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c6d0febb-1028-4577-b040-5343aa44d3fe" />
+        <suppliersInternal>
+          <interfaceRealization Id="1a3ce5ce-6fa7-48b0-b651-9882a741ea21">
+            <interfaceMoniker Id="21c9bdfc-333b-4368-ba22-d02558f90b4a" LastKnownName="IBookingStrategy" />
+            <elementDefinition Id="722e6f93-9913-46e2-b88b-7644c30082e2" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="7ea7d554-31f7-44f9-aea8-3c9f700ca3e4" name="isOnRequest" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5334b4cf-e9fb-4dbe-94fe-2ba9aa809c04" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="9f365e0b-8cda-41ef-822a-9f5aa3283514" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="aed1dea6-7b7c-4197-b5ae-21b96eb457a3" name="Confirm" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c2fd0e58-6ce4-4ee5-ab2c-ae5ca87d2d28" />
+          </operation>
+          <operation Id="0e82f1f0-491a-4bdb-80fb-67a77e806d8d" name="Accept" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7281a6aa-d8bc-4579-ae26-9ba1741bc1d9" />
+          </operation>
+          <operation Id="b51ac30f-07ab-4c34-9a46-18e5a83a963c" name="Cancel" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="55f82163-5ff7-42d1-a3d1-2f6fe5ab8d9d" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="2ec44a58-4782-4c41-b8dd-5720aa60ebdc" name="OA">
+    <elementDefinition Id="f9708541-e4ec-4a2f-81b9-2bdd545ad81a" />
+  </package>
+</logicalClassDesignerModel>

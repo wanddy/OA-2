@@ -1,11 +1,11 @@
 namespace OA.Framework.DomainModel
 {
-    using System.Collections.Generic;
+    using System.Collections;
 
     public interface IAggregateRoot<out TId>
     {
         TId Id { get; }
 
-        IEnumerable<object> UncommitedEvents { get; }
+        IEnumerable UncommitedEvents { get; }
     }
 }

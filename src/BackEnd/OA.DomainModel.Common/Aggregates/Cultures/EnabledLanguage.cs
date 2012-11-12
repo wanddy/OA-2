@@ -1,5 +1,6 @@
 namespace OA.DomainModel.Aggregates.Cultures
 {
+    using System;
     using System.Globalization;
 
     using OA.Events.Contracts.Languages;
@@ -7,8 +8,8 @@ namespace OA.DomainModel.Aggregates.Cultures
 
     public class EnabledLanguage : Language
     {
-        private EnabledLanguage(CultureInfo id)
-            : base(id)
+        private EnabledLanguage(Guid id, CultureInfo culture)
+            : base(id, culture)
         {
         }
 
@@ -18,7 +19,7 @@ namespace OA.DomainModel.Aggregates.Cultures
 
         public static EnabledLanguage CreateNew(CultureInfo culture)
         {
-            return new EnabledLanguage(culture);
+            return new EnabledLanguage(Guid.NewGuid(), culture);
         }
 
         public virtual DisabledLanguage Disable()

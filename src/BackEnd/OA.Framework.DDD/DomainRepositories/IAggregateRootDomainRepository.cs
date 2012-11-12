@@ -6,7 +6,5 @@ namespace OA.Framework.DomainRepositories
         where TAggregate : IAggregateRoot<TId>
     {
         void Save(TAggregate aggregateRoot);
-
-        void Remove(TAggregate aggregateRoot);
     }
 }

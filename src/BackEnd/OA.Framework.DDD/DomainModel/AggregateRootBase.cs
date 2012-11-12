@@ -1,12 +1,11 @@
 namespace OA.Framework.DomainModel
 {
     using System;
-    using System.Collections.Generic;
+    using System.Collections;
 
     public abstract class AggregateRootBase<TId> : IAggregateRoot<TId>
     {
-        private readonly ICollection<object> uncommitedEvents = new List<object>();
-
+        private readonly ICollection uncommitedEvents = new ArrayList();
 
         protected AggregateRootBase(TId id)
         {
@@ -21,7 +20,7 @@ namespace OA.Framework.DomainModel
 
         public virtual TId Id { get; private set; }
 
-        public IEnumerable<object> UncommitedEvents
+        public IEnumerable UncommitedEvents
         {
             get
             {
